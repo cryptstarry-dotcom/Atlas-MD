@@ -243,9 +243,13 @@ const startAtlas = async () => {
   const { version, isLatest } = await fetchLatestBaileysVersion();
 
   const Atlas = makeWASocket({
-    logger: pino({ level: "silent" }),
-    browser: ["Ubuntu", "Chrome", "126.0.0.0"],
-auth: state,
+  logger: pino({ level: "silent" }),
+  browser: ["Ubuntu", "Chrome", "126.0.0.0"],
+  auth: state,
+  version: [2, 3000, 1017571343],
+  printQRInTerminal: false,
+  keepAliveIntervalMs: 25_000,
+});
     printQRInTerminal: false, // Important: Disable QR terminal
     keepAliveIntervalMs: 25_000,
   });
