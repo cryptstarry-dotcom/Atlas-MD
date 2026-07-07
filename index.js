@@ -247,6 +247,16 @@ const startAtlas = async () => {
     browser: ["Ubuntu", "Chrome", "20.0.04"],
     auth: state,
     version,
+    printQRInTerminal: false,   // Important: Disable QR
+});
+
+// === ADD THIS BLOCK RIGHT AFTER THE makeWASocket ===
+if (!Atlas.authState.creds.registered) {
+    const phoneNumber = "2348062874218";   // ← CHANGE THIS
+    const code = await Atlas.requestPairingCode(phoneNumber);
+    console.log("🔑 ATLAS PAIRING CODE:", code);
+}
+AtlasSocket = Atlas; // Keep this line if it exists
     // Send a WebSocket ping every 25 s so the server never silently drops
     // an idle connection. If the pong does not come back Baileys fires the
     // normal "connection.update" → "close" event, which restarts the bot.
