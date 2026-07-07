@@ -250,10 +250,6 @@ const startAtlas = async () => {
   printQRInTerminal: false,
   keepAliveIntervalMs: 25_000,
 });
-    printQRInTerminal: false, // Important: Disable QR terminal
-    keepAliveIntervalMs: 25_000,
-  });
-
   // === ADD THIS BLOCK RIGHT AFTER THE makeWASocket ===
   if (!Atlas.authState.creds.registered) {
     const phoneNumber = "2348062874218"; 
