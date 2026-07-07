@@ -244,9 +244,8 @@ const startAtlas = async () => {
 
   const Atlas = makeWASocket({
     logger: pino({ level: "silent" }),
-    browser: ["Ubuntu", "Chrome", "20.0.04"],
-    auth: state,
-    version,
+    browser: ["Ubuntu", "Chrome", "126.0.0.0"],
+auth: state,
     printQRInTerminal: false, // Important: Disable QR terminal
     keepAliveIntervalMs: 25_000,
   });
